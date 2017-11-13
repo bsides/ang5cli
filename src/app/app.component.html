@@ -7,14 +7,13 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  <li *ngFor="let item of items">
+    <h2>
+      <a target="_blank" rel="noopener" href="{{item.url}}">{{item.title}}</a>
+    </h2>
   </li>
 </ul>
 
+<button type="button" class="btn" [class.btn-primary]="whatever" [class.btn-success]="!whatever" (click)="toggleWhatever($event)">Whatever!</button>
+<button type="button" class="btn btn-danger" (click)="removeItem($event)">Remove an item!</button>
+<button type="button" class="btn btn-success" (click)="restoreItems($event)">Restore all items!</button>
